@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import Transactions from './components/Transactions.vue'
+import Evolution from './components/Evolution.vue'
+
 </script>
 
 <template>
-  <Transactions/>
+  <!-- <Transactions/> -->
+  <Evolution/>
 </template>
 
 <style scoped>
