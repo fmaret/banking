@@ -48,7 +48,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas ref="chartRef" style="max-width: 800px;"></canvas>
+  <canvas ref="chartRef" style="width: 300px; height: 300px"></canvas>
 </template>
 
 <style scoped>
