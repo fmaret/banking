@@ -41,8 +41,8 @@ export default {
 }
 
 const addFutureTransaction = (futureTransactions) => {
-  const next_index = (Math.max(...futureTransactions.map(x=> x.id))) + 1;
-  futureTransactions.push({"date": "2023-06-20", "id": next_index, "label": "Test", "amount": 10})
+  const next_index = (futureTransactions.length != 0) ? (Math.max(...futureTransactions.map(x=> x.id))) + 1 : 1;
+  futureTransactions.push({"id": next_index, "label": "Test", "amount": 10})
   Cookies.set("futureTransactions", JSON.stringify(futureTransactions))
 }
 

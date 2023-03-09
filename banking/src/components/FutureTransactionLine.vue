@@ -10,7 +10,7 @@
           <input v-model="transaction.label" @keyup.enter="editLabelFalse(futureTransactions, transaction)" @keyup.esc="editLabelFalse(futureTransactions, transaction)">
         </div>
         <div class="text-xs text-gray-500">
-          {{ transaction.date }}
+          {{ transaction.id }}
         </div>
       </div>
     </div>
