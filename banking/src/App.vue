@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import Transactions from './components/Transactions.vue'
 import Evolution from './components/Evolution.vue'
+import FutureTransactions from './components/FutureTransactions.vue'
+
 
 </script>
 
 <template>
   <!-- <Transactions/> -->
-  <Evolution/>
+  <!-- <Evolution/> -->
+  <FutureTransactions/>
 </template>
 
 <style scoped>
