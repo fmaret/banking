@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { FutureTransaction } from '@/types'
+import FutureTransaction from '../../types/FutureTransaction'
 import { ref } from 'vue';
 import Cookies from 'js-cookie'
 
@@ -45,16 +45,16 @@ const editLabelTrue = () => {
 const editAmountTrue = () => {
   editingAmount.value = true
 }
-const editLabelFalse = (futureTransactions, transaction: JSON) => {
+const editLabelFalse = (futureTransactions: Array<FutureTransaction>, transaction: FutureTransaction) => {
   editingLabel.value = false
   updateFutureTransaction(futureTransactions, transaction);
 }
-const editAmountFalse = (futureTransactions, transaction: JSON) => {
+const editAmountFalse = (futureTransactions: Array<FutureTransaction>, transaction: FutureTransaction) => {
   editingAmount.value = false
   updateFutureTransaction(futureTransactions, transaction)
 }
 
-const updateFutureTransaction = (futureTransactions, futureTransaction: FutureTransaction | null) => {
+const updateFutureTransaction = (futureTransactions: Array<FutureTransaction>, futureTransaction: FutureTransaction) => {
   let found = false;
   for (let key in futureTransactions) {
     if (futureTransactions[key].id === futureTransaction.id) {
@@ -65,7 +65,7 @@ const updateFutureTransaction = (futureTransactions, futureTransaction: FutureTr
   Cookies.set("futureTransactions", JSON.stringify(futureTransactions))
 }
 
-const removeTransaction = (futureTransactions, futureTransaction) => {
+const removeTransaction = (futureTransactions: Array<FutureTransaction>, futureTransaction: FutureTransaction) => {
   let found = false;
   for (let i=0; i<futureTransactions.length; i++) {
     if (futureTransactions[i].id === futureTransaction.id) {

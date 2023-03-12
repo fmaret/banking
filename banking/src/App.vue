@@ -2,14 +2,12 @@
 import Transactions from './components/Transactions.vue'
 import Evolution from './components/Evolution.vue'
 import FutureTransactions from './components/FutureTransactions.vue'
-import NavBar from './components/NavBar.vue'
 
 
 </script>
 
 <template>
   <div>
-  <!-- <NavBar/> -->
   <!-- <Transactions/> -->
   <Evolution/>
   <FutureTransactions/>

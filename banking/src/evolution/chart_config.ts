@@ -1,11 +1,12 @@
 import { simulateMonths, sumTransactions } from "./evolution_utils"
 import Cookies from 'js-cookie'
+import { loadFutureTransactions } from "./future_transactions_utils"
 
 export function computeDataAndFutureData(dataLabels: Array<String>, data: Array<number>, duration: number) {
     console.log(dataLabels)
     console.log(data)
     duration = duration + data.length
-    let futureData = Array(duration).fill(sumTransactions(JSON.parse(Cookies.get("futureTransactions"))));
+    let futureData = Array(duration).fill(sumTransactions(loadFutureTransactions()));
     let allDataSums = [...data, ...futureData]
     allDataSums = allDataSums.reduce((acc, cur) => {
         if (acc.length > 0) {
@@ -50,17 +51,6 @@ export function computeDataAndFutureData(dataLabels: Array<String>, data: Array<
   
   export const options = {
     responsive: true,
-    maintainAspectRatio: true,
-    scales: {
-    	yAxes: [{
-        ticks: {
-          min: 0,
-          max: 500,
-          stepSize: 100,
-		  reverse: false,
-          beginAtZero: true
-        }
-      }]
-    }
+    maintainAspectRatio: true
   }
   

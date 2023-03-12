@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import Transaction from '../../types/Transaction'
 
-defineProps<{ transaction: JSON }>();
+
+defineProps<{ transaction: Transaction }>();
 </script>
 
 <template>

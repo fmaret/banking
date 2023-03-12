@@ -1,9 +1,5 @@
-interface Transaction {
-    date: string;
-    label: string;
-    amount: number;
-  }
-  
+import Transaction from "../../types/Transaction"
+import MonthlyTotal from "../../types/MonthlyTotal"
 /**
  * Calcule le total des transactions pour un mois donné
  * @param transactions La liste de transactions à filtrer
@@ -35,12 +31,6 @@ export function totalPertes(transactions: Transaction[]): number {
 return transactions.filter(t => t.amount < 0).reduce((total, t) => total + t.amount, 0);
 }
 
-
-
-interface MonthlyTotal {
-month: string;
-total: number;
-}
 
 export function groupByMonth(transactions: Transaction[]): MonthlyTotal[] {
 const monthlyTotals: MonthlyTotal[] = [];

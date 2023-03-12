@@ -14,7 +14,7 @@ const transactions = ref(generateTransactions(20))
 <div class="w-80">
   <div class="flex flex-col">
     <h1 class="text-xl">Transactions</h1>
-    <div v-for="transaction in transactions" :key="transaction">
+    <div v-for="transaction in transactions" :key="transaction.label">
       <TransactionLine :transaction="transaction"/>
     </div>
   </div>
