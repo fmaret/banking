@@ -44,7 +44,6 @@ const groupedTransactions = transactions.reduce((acc, transaction) => {
     monthlyTotals.find((mt) => mt.month === month)!.total += transaction.amount;
     return acc;
 }, {} as Record<string, Transaction[]>);
-console.log(monthlyTotals)
 return monthlyTotals;
 }
 

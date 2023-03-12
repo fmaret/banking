@@ -43,7 +43,6 @@ onMounted(() => {
 
   labels.value = (formattedData.map(({ date }) => date.toLocaleString('default', { month: 'short', year: 'numeric' })));
   data.value = (Object.values(groupedData).map(item => parseFloat(item.total.toFixed(2))));
-  console.log("data", data.value)
 });
 
 </script>

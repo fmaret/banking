@@ -3,8 +3,6 @@ import Cookies from 'js-cookie'
 import { loadFutureTransactions } from "./future_transactions_utils"
 
 export function computeDataAndFutureData(dataLabels: Array<String>, data: Array<number>, duration: number) {
-    console.log(dataLabels)
-    console.log(data)
     duration = duration + data.length
     let futureData = Array(duration).fill(sumTransactions(loadFutureTransactions()));
     let allDataSums = [...data, ...futureData]
